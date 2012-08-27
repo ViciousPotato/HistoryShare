@@ -1,10 +1,9 @@
 # 100M
 db = openDatabase('history', '1.0', 'Main database', 100 * 1024 * 1024)
 db.transaction (tx) ->
-	tx.executeSql('CREATE TABLE IF NOT EXISTS history (id INTEGER PRIMARY KEY AUTOINCREMENT, url TEXT)')
+	tx.executeSql('CREATE TABLE IF NOT EXISTS history (id INTEGER PRIMARY KEY AUTOINCREMENT, url TEXT, timestamp TIMESTAMP)')
 
 chrome.webNavigation.onCommitted.addListener (details) ->
-	console.log details
 	###
 	Filter out urls below:
 	1. qualifier = auto_frame
@@ -18,9 +17,14 @@ chrome.webNavigation.onCommitted.addListener (details) ->
 
 	if details.transitionType in ["auto_subframe"] then return
 
+	console.log details.timeStamp
+	console.log details
+	
 	# Save to db
 	db.transaction (tx) ->
-		tx.executeSql('INSERT INTO history (url) VALUES (?)', [details.url])
+		tx.executeSql(
+			'INSERT INTO history (url, timestamp) VALUES (?, ?)', 
+			[details.url, details.timeStamp])
 
 
 
