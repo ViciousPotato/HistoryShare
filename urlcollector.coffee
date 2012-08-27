@@ -1,7 +1,7 @@
 # 100M
 db = openDatabase('history', '1.0', 'Main database', 100 * 1024 * 1024)
 db.transaction (tx) ->
-	tx.executeSql('CREATE TABLE history (id INTEGER PRIMARY KEY AUTOINCREMENT, url TEXT)')
+	tx.executeSql('CREATE TABLE IF NOT EXISTS history (id INTEGER PRIMARY KEY AUTOINCREMENT, url TEXT)')
 
 chrome.webNavigation.onCommitted.addListener (details) ->
 	console.log details

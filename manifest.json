@@ -1,10 +1,11 @@
 {
-  "name": "My First Extension",
+  "name": "History Share",
   "version": "1.0",
   "manifest_version": 2,
-  "description": "The first extension that I made.",
+  "description": "Share your interests and find good stuff from others.",
   "browser_action": {
-    "default_icon": "icon.png"
+    "default_icon": "icon.png",
+    "default_popup" : "popup.html"
   },
   "background" : {"scripts" : ["urlcollector.js"]},
   "permissions": [
