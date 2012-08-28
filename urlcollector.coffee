@@ -19,6 +19,11 @@ chrome.webNavigation.onCommitted.addListener (details) ->
 
 	console.log details.timeStamp
 	console.log details
+
+	chrome.tabs.get details.tabId, (tab_details) ->
+		console.log "Window title #{tab_details.title}"
+
+	console.log 
 	
 	# Save to db
 	db.transaction (tx) ->
@@ -27,4 +32,6 @@ chrome.webNavigation.onCommitted.addListener (details) ->
 			[details.url, details.timeStamp])
 
 
-
+chrome.webNavigation.onCompleted.addListener (details) ->
+	chrome.tabs.get details.tabId, (tab_details) ->
+		console.log "Now the window title is #{tab_details.title}"

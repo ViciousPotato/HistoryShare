@@ -10,3 +10,4 @@ $(document).ready ->
 				$("#result").append "<li>#{results.rows.item(i).url}</li>" for i in [0 .. results.rows.length - 1]
 			(tx, error) -> console.log(error)
 		)
+	# Add comment to test auto compile
