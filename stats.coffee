@@ -7,7 +7,6 @@ $(document).ready ->
       _.chain(results)
        .countBy((result) -> URI(result.url).domain())
        .map((val, k) -> { domain: k, hits: val })
-       .each (o) -> $('body').append "#{o.domain}: #{o.hits}<br>"
-
-    #ordered = _.orderBy stats, (o) -> o.hits
+       .sortBy((o) -> o.hits)
+       .each((o) -> $('body').append "#{o.domain}: #{o.hits}<br>")
       

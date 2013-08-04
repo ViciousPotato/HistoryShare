@@ -13,6 +13,8 @@ $(document).ready(function() {
         domain: k,
         hits: val
       };
+    }).sortBy(function(o) {
+      return o.hits;
     }).each(function(o) {
       return $('body').append("" + o.domain + ": " + o.hits + "<br>");
     });
