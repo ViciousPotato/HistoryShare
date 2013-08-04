@@ -1,4 +1,7 @@
 $(document).ready ->
+	chrome.tabs.create
+		url: 'options.html'
+	
 	db = openDatabase('history', '1.0', 'Main database', 100 * 1024 * 1024)
 	db.transaction (tx) -> 
 		tx.executeSql(
