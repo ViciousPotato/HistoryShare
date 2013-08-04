@@ -3,10 +3,10 @@ README
 
 ## Purpose
 
-First it will show stats of your browsing history
+HistoryShare will visualize your browsing history to show intersting bits of your habit.
 
-Second it may let you share your browsing history anonymously with others through our web server, to discover what
-other people are viewing.
+It also allows share your browsing history anonymously with others through our web server, to discover what
+other people with the similar interests are viewing.
 
 
 ## Installation
