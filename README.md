@@ -11,11 +11,14 @@ other people with the similar interests are viewing.
 
 ## Installation
 
-  git clone https://github.com/ViciousPotato/HistoryShare.git
+    git clone https://github.com/ViciousPotato/HistoryShare.git
 
-In Chrome, select Tools/Extensions and check developer mode, select Load unpacked extension...
+In Chrome, select Tools/Extensions and check developer mode, select Load unpacked extension... and locate the folder
+you cloned.
 
 Done.
+
+We will provide direct packed extension download in the future.
 
 ## Development
 Run the following command to auto compile
